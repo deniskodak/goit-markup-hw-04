@@ -168,6 +168,13 @@ img {
   text-transform: uppercase;
 }
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+
+
   background-color: var(--primary-bg-color);
   background-image:
   linear-gradient(
@@ -245,9 +252,16 @@ img {
 }
 .service-list {
   display: flex;
+  flex-wrap: wrap;
 }
-.service-list .item:not(:last-child) {
+.service-list .item {
+  width: 370px;
+}
+.service-list .item:not(:nth-child(3n)) {
   margin-right: 30px;
+}
+.service-list .item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
 }
 .service-list .link {
   display: block;
