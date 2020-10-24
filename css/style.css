@@ -23,6 +23,9 @@
 .link {
   text-decoration: none;
 }
+p {
+  margin: 0;
+}
 
 /* Стили цвета для текста body  */
 body {
@@ -37,6 +40,18 @@ img {
   display: block;
   min-width: 100%;
   height: auto;
+}
+/* Стили для контейнера */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header {
+  border: 1px solid #ECECEC;
 }
 /* Флекс-стили для навигации */
 .header-container {
@@ -290,6 +305,8 @@ img {
   line-height: 1.19;
 }
 .team-list .text {
+  margin-bottom: 16px;
+
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
@@ -297,6 +314,18 @@ img {
 .member-content {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.socials-list {
+  display: flex;
+  justify-content: center;
+}
+.socials-item:not(:last-child) {
+  margin-right: 10px;
+}
+.socials-item {
+  width: 44px;
+  height: 44px;
 }
 /* Стили для секции Наши клиенты */
 .clients-list {
@@ -403,6 +432,15 @@ img {
   background-color: var(--primary-bg-color);
 }
 
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-box:not(:last-child) {
+  margin-right: 70px;
+}
+
 /* Стили для контактов почты и тел. */
 
 .contacts-header .link {
@@ -427,19 +465,22 @@ img {
   color: var(--primary-white-color);
 }
 
-/* Стили для контейнера */
-.container {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
 
 /* Оступы для ссылок в футере */
 .contacts-footer .link:not(:last-child) {
   margin-bottom: 9px;
 }
+
+.footer-box .text {
+margin-bottom: 20px;
+
+font-weight: bold;
+line-height: 1.142;
+text-transform: uppercase;
+color: var(--primary-white-color);
+}
+
+
 
 /* Класс для скрывания заголовков */
 .visually-hidden {
