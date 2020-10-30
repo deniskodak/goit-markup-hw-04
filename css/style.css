@@ -11,6 +11,9 @@
   --primary-white-color: #ffffff;
   --primary-bg-color: #2f303a;
   --secondary-bg-color: #f5f4fa;
+  --socials-bg-color: rgba(255, 255, 255, 0.1);
+  --socials-color: #AFB1B8;
+  --portfolio-border: #EEEEEE;
 }
 /* Отключает точки в списках */
 .list {
@@ -80,24 +83,7 @@ img {
 .contacts-header .link {
   align-items: center;
 }
-.contacts-header .link::before {
-  content: '';
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 
-  margin-right: 10px;
-}
-.icon-mail::before {
-  background-image: url('../images/contacts/envelope.svg');
-  height: 12px;
-  width: 16px;
-}
-.icon-mobile::before {
-  background-image: url('../images/contacts/smartphone.svg');
-  height: 16px;
-  width: 10px;
-}
 /* Стили для ссылок навигации */
 .site-nav .link,
 .contacts-header .link {
@@ -145,6 +131,9 @@ img {
   color: var(--accent-text-color);
 }
 
+.icon-contacts {
+  margin-right: 10px;
+}
 /* Стили для h2 заголовков */
 .section .title {
   margin-top: 0;
@@ -218,6 +207,16 @@ img {
 }
 
 /* Стили для секции Преимущества */
+.features-icon {
+  display: flex;
+    align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  width: 270px;
+  height: 120px;
+  background-color: #F5F4FA;
+}
 
 .features-list {
   display: flex;
@@ -228,29 +227,7 @@ img {
 .features-list .item:not(:last-child) {
   margin-right: 30px;
 }
-.features-list .item::before {
-  margin-bottom: 30px;
 
-  content: '';
-  display: block;
-  height: 120px;
-  background-color: var(--secondary-bg-color);
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center;
-}
-.icon-antenna::before {
-  background-image: url('../images/features/antenna.svg');
-}
-.icon-clock::before {
-  background-image: url('../images/features/clock.svg');
-}
-.icon-diagram::before {
-  background-image: url('../images/features/diagram.svg');
-}
-.icon-austronaut::before {
-  background-image: url('../images/features/astronaut.svg');
-}
 .features-list .title {
   font-size: 14px;
   line-height: 1.14;
@@ -327,14 +304,41 @@ img {
   width: 44px;
   height: 44px;
 }
+.socials-link.member {
+  background-color: var(--primary-white-color);
+  fill: var(--socials-color);
+}
+.socials-link.member:hover,
+.socials-link.member:focus {
+  fill: var(--primary-white-color);
+}
+
 /* Стили для секции Наши клиенты */
 .clients-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
-/* .clients-list .item:not(:last-child) {
+.clients-list .item {
+  width: calc((100% - 5 * 30px) / 6);
+}
+.clients-list .item:not(:last-child) {
   margin-right: 30px;
-} */
+}
+.clients-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  fill: var(--socials-color);
+  border: 1px solid var(--socials-color);
+  border-radius: 4px;
+}
+.clients-link:hover,
+.clients-link:focus {
+  fill: var(--accent-text-color);
+  border-color: var(--accent-text-color);
+}
+
 /* Стили для списка портфолио */
 .portfolio-list {
   display: flex;
@@ -365,6 +369,12 @@ img {
 .porfolio-link {
   display: flex;
   flex-direction: column;
+
+  border: 1px solid var(--portfolio-border);
+}
+.porfolio-link:hover,
+.porfolio-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .porfolio-content {
   padding: 20px 24px;
@@ -394,6 +404,7 @@ img {
   font-size: 16px;
   border: transparent;
   border-radius: 4px;
+  
 }
 .button.primary {
   padding: 10px 32px;
@@ -418,6 +429,7 @@ img {
 .button.secondary:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-text-color);
+
 }
 .button.primary:hover,
 .button.primary:focus {
@@ -445,6 +457,7 @@ img {
 
 .contacts-header .link {
   color: var(--primary-text-color);
+  fill: currentColor;
 }
 .contacts-footer {
   font-style: normal;
@@ -457,6 +470,7 @@ img {
 }
 .contacts .link:hover,
 .contacts .link:focus {
+  fill: var(--accent-text-color);
   color: var(--accent-text-color);
 }
 
@@ -480,7 +494,25 @@ text-transform: uppercase;
 color: var(--primary-white-color);
 }
 
+/* Стили для социальных ссылок в футере */
+.socials-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+}
+.socials-link.company {
+  fill: var(--primary-white-color);
+  background-color: var(--socials-bg-color);
+}
+.socials-link:hover,
+.socials-link:focus {
+  background-color: var(--accent-text-color);
+}
 
 /* Класс для скрывания заголовков */
 .visually-hidden {
